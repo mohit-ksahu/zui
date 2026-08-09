@@ -1,0 +1,92 @@
+@layer components {
+  .avatar {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: var(--radius-full);
+    background-color: var(--muted);
+    color: var(--muted-foreground);
+    user-select: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    &.avatar-sm {
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: 0.75rem;
+    }
+
+    &.avatar-lg {
+      width: 2.5rem;
+      height: 2.5rem;
+      font-size: 1rem;
+    }
+
+    &.avatar-xl {
+      width: 3rem;
+      height: 3rem;
+      font-size: 1.125rem;
+    }
+
+    &.avatar-sq,
+    &.avatar-square {
+      border-radius: var(--radius-md);
+
+      & .avatar-image,
+      & .avatar-fallback {
+        border-radius: var(--radius-md);
+      }
+    }
+  }
+
+  .avatar-image {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+  }
+
+  .avatar-fallback {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    background-color: var(--muted);
+    color: var(--muted-foreground);
+  }
+
+  .avatar-badge {
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: var(--radius-full);
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    box-shadow: 0 0 0 2px var(--background);
+  }
+
+  .avatar-group {
+    display: flex;
+    align-items: center;
+
+    & .avatar {
+      box-shadow: 0 0 0 2px var(--background);
+    }
+
+    & > *:not(:first-child) {
+      margin-left: -0.5rem;
+    }
+  }
+}
