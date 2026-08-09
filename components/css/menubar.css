@@ -1,0 +1,78 @@
+@layer components {
+  .menubar {
+    display: flex;
+    height: 2.25rem;
+    align-items: center;
+    gap: calc(var(--spacing) * 1);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    background-color: var(--background);
+    padding: calc(var(--spacing) * 1);
+    box-sizing: border-box;
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .menubar-menu {
+    position: relative;
+    display: inline-flex;
+  }
+
+  .menubar-trigger {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing) * 1.5);
+    height: 1.75rem;
+    padding: 0 calc(var(--spacing) * 2.5);
+    border-radius: var(--radius-lg);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--foreground);
+    background: transparent;
+    border: none;
+    cursor: default;
+    user-select: none;
+    outline: none;
+    white-space: nowrap;
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: var(--muted);
+        color: var(--foreground);
+      }
+    }
+
+    &:focus-visible,
+    &[data-state="open"],
+    &:is(:active) {
+      background-color: var(--muted);
+      color: var(--foreground);
+    }
+
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  .menubar-content[popover]:not(.submenu) {
+    min-width: calc(var(--spacing) * 48);
+    margin-top: calc(var(--spacing) * 2);
+  }
+
+  .menubar-item-checkbox,
+  .menubar-item-radio {
+    position: relative;
+    padding-left: calc(var(--spacing) * 7);
+
+    & .menubar-item-icon {
+      position: absolute;
+      left: calc(var(--spacing) * 2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+}
