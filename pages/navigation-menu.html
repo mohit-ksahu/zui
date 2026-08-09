@@ -1,0 +1,157 @@
+<style>
+  .nav-featured-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 12rem) 1fr;
+    gap: calc(var(--spacing) * 3);
+    width: 30rem;
+    max-width: calc(100vw - calc(var(--spacing) * 8));
+
+    @media (max-width: 640px) {
+      grid-template-columns: 1fr;
+      width: 100%;
+    }
+  }
+
+  .nav-featured-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: calc(var(--spacing) * 4);
+    border-radius: var(--radius-lg);
+    background-color: var(--muted);
+    border: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--foreground);
+    outline: none;
+    transition: background-color var(--duration-fast) var(--ease-default);
+
+    @media (hover: hover) {
+      &:hover {
+        background-color: color-mix(in oklch, var(--foreground) 6%, transparent);
+      }
+    }
+  }
+
+  .nav-column {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 1);
+  }
+
+  .nav-title {
+    font-weight: 500;
+    color: var(--foreground);
+    margin-bottom: calc(var(--spacing) * 0.5);
+  }
+
+  .nav-desc {
+    font-size: 0.75rem;
+    color: var(--muted-foreground);
+    line-height: 1.4;
+  }
+
+  .nav-chevron {
+    width: 1rem;
+    height: 1rem;
+    opacity: 0.7;
+    transition: transform var(--duration-fast) var(--ease-default);
+  }
+
+  .nav-menu-item:has(.nav-menu-content:popover-open) .nav-chevron {
+    transform: rotate(180deg);
+  }
+
+  .nav-icon-list {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 0.5);
+    min-width: 11rem;
+  }
+
+  .nav-icon-item {
+    display: flex;
+    align-items: center;
+    gap: calc(var(--spacing) * 2.5);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .nav-icon-item svg {
+    width: 1.125rem;
+    height: 1.125rem;
+    flex-shrink: 0;
+    color: var(--muted-foreground);
+  }
+</style>
+
+<section id="navigation-menu" class="section">
+  <h2>Navigation Menu</h2>
+  <p class="section-meta">
+    A collection of links for navigating websites. Built with native Popover & CSS Anchor Positioning.
+  </p>
+
+  <preview>
+    <nav class="nav-menu" aria-label="Main Navigation">
+      <ul class="nav-menu-list">
+        <!-- Getting Started Mega Menu -->
+        <li class="nav-menu-item">
+          <button class="nav-menu-trigger" popovertarget="nav-getting-started" style="anchor-name: --nav-gs">
+            Getting Started
+            <i data-lucide="chevron-down" class="nav-chevron"></i>
+          </button>
+          <div id="nav-getting-started" popover class="nav-menu-content" data-placement="bottom-start" style="position-anchor: --nav-gs">
+            <div class="nav-featured-grid">
+              <a href="#" class="nav-featured-card">
+                <div style="font-size: 1rem; font-weight: 600; margin-bottom: calc(var(--spacing) * 1)">Design System</div>
+                <div class="nav-desc">Polished UI components built with plain HTML, CSS, and vanilla JavaScript.</div>
+              </a>
+              <div class="nav-column">
+                <a href="#" class="nav-menu-link">
+                  <div class="nav-title">Introduction</div>
+                  <div class="nav-desc">Re-usable UI components built using HTML5, OKLCH colors, and modern CSS.</div>
+                </a>
+                <a href="#" class="nav-menu-link">
+                  <div class="nav-title">Installation</div>
+                  <div class="nav-desc">How to copy styles, bundle with esbuild, or use directly without build tools.</div>
+                </a>
+                <a href="#" class="nav-menu-link">
+                  <div class="nav-title">Theming</div>
+                  <div class="nav-desc">Customize tokens, colors, radius, and dark mode transitions easily.</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- With Icon Menu (Status List) -->
+        <li class="nav-menu-item">
+          <button class="nav-menu-trigger" popovertarget="nav-status" style="anchor-name: --nav-status">
+            With Icon
+            <i data-lucide="chevron-down" class="nav-chevron"></i>
+          </button>
+          <div id="nav-status" popover class="nav-menu-content" data-placement="bottom-start" style="position-anchor: --nav-status">
+            <div class="nav-icon-list">
+              <a href="#" class="nav-menu-link nav-icon-item">
+                <i data-lucide="alert-circle"></i>
+                <span>Backlog</span>
+              </a>
+              <a href="#" class="nav-menu-link nav-icon-item">
+                <i data-lucide="circle-dashed"></i>
+                <span>To Do</span>
+              </a>
+              <a href="#" class="nav-menu-link nav-icon-item">
+                <i data-lucide="check-circle-2"></i>
+                <span>Done</span>
+              </a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Docs Link -->
+        <li class="nav-menu-item">
+          <a href="#" class="nav-menu-trigger">Docs</a>
+        </li>
+      </ul>
+    </nav>
+  </preview>
+</section>

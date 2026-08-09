@@ -1,0 +1,186 @@
+<section id="menubar" class="section">
+  <h2>Menubar</h2>
+  <p class="section-meta">
+    A visually persistent menu common in desktop applications that provides quick access to a consistent set of commands.
+  </p>
+
+  <preview>
+    <div class="menubar" role="menubar">
+      <!-- File Menu -->
+      <div class="menubar-menu">
+        <button class="menubar-trigger" popovertarget="mb-file" style="anchor-name: --mb-file">File</button>
+        <menu id="mb-file" popover class="dropdown menubar-content" data-placement="bottom-start" role="menu" style="position-anchor: --mb-file">
+          <button class="menu-item" role="menuitem">
+            <i data-lucide="plus-circle"></i>
+            <span>New Tab</span>
+            <span class="shortcut">⌘T</span>
+          </button>
+          <button class="menu-item" role="menuitem">
+            <i data-lucide="file-plus"></i>
+            <span>New Window</span>
+            <span class="shortcut">⌘N</span>
+          </button>
+          <button class="menu-item" role="menuitem" disabled>
+            <i data-lucide="eye-off"></i>
+            <span>New Incognito Window</span>
+          </button>
+
+          <div class="menu-separator"></div>
+
+          <button class="menu-item submenu-trigger" role="menuitem" popovertarget="mb-share" style="anchor-name: --mb-share">
+            <i data-lucide="share-2"></i>
+            <span>Share</span>
+            <i data-lucide="chevron-right" class="submenu-icon"></i>
+          </button>
+          <menu id="mb-share" popover class="dropdown submenu" data-placement="right-start" role="menu" style="position-anchor: --mb-share">
+            <button class="menu-item" role="menuitem">
+              <i data-lucide="mail"></i>
+              <span>Email Link</span>
+            </button>
+            <button class="menu-item" role="menuitem">
+              <i data-lucide="message-square"></i>
+              <span>Messages</span>
+            </button>
+            <button class="menu-item" role="menuitem">
+              <i data-lucide="file-text"></i>
+              <span>Notes</span>
+            </button>
+          </menu>
+
+          <div class="menu-separator"></div>
+
+          <button class="menu-item" role="menuitem">
+            <i data-lucide="printer"></i>
+            <span>Print...</span>
+            <span class="shortcut">⌘P</span>
+          </button>
+        </menu>
+      </div>
+
+      <!-- Edit Menu -->
+      <div class="menubar-menu">
+        <button class="menubar-trigger" popovertarget="mb-edit" style="anchor-name: --mb-edit">Edit</button>
+        <menu id="mb-edit" popover class="dropdown menubar-content" data-placement="bottom-start" role="menu" style="position-anchor: --mb-edit">
+          <button class="menu-item" role="menuitem">
+            <i data-lucide="undo-2"></i>
+            <span>Undo</span>
+            <span class="shortcut">⌘Z</span>
+          </button>
+          <button class="menu-item" role="menuitem">
+            <i data-lucide="redo-2"></i>
+            <span>Redo</span>
+            <span class="shortcut">⇧⌘Z</span>
+          </button>
+
+          <div class="menu-separator"></div>
+
+          <button class="menu-item" role="menuitem">
+            <i data-lucide="scissors"></i>
+            <span>Cut</span>
+            <span class="shortcut">⌘X</span>
+          </button>
+          <button class="menu-item" role="menuitem">
+            <i data-lucide="copy"></i>
+            <span>Copy</span>
+            <span class="shortcut">⌘C</span>
+          </button>
+          <button class="menu-item" role="menuitem">
+            <i data-lucide="clipboard"></i>
+            <span>Paste</span>
+            <span class="shortcut">⌘V</span>
+          </button>
+        </menu>
+      </div>
+
+      <!-- View Menu -->
+      <div class="menubar-menu">
+        <button class="menubar-trigger" popovertarget="mb-view" style="anchor-name: --mb-view">View</button>
+        <menu id="mb-view" popover class="dropdown menubar-content" data-placement="bottom-start" role="menu" style="position-anchor: --mb-view">
+          <label class="menu-item" style="justify-content: space-between" role="menuitemcheckbox">
+            <span style="display: flex; align-items: center; gap: 0.5rem">
+              <i data-lucide="bookmark"></i>
+              Always Show Bookmarks Bar
+            </span>
+            <input type="checkbox" class="checkbox" checked aria-hidden="true" tabindex="-1" />
+          </label>
+          <label class="menu-item" style="justify-content: space-between" role="menuitemcheckbox">
+            <span style="display: flex; align-items: center; gap: 0.5rem">
+              <i data-lucide="link"></i>
+              Always Show Full URLs
+            </span>
+            <input type="checkbox" class="checkbox" aria-hidden="true" tabindex="-1" />
+          </label>
+
+          <div class="menu-separator"></div>
+
+          <button class="menu-item submenu-trigger" role="menuitem" popovertarget="mb-zoom-sub" style="anchor-name: --mb-zoom-sub">
+            <i data-lucide="search"></i>
+            <span>Zoom Level</span>
+            <i data-lucide="chevron-right" class="submenu-icon"></i>
+          </button>
+          <menu id="mb-zoom-sub" popover class="dropdown submenu" data-placement="right-start" role="menu" style="position-anchor: --mb-zoom-sub">
+            <label class="menu-item" style="justify-content: space-between" role="menuitemradio">
+              <span>100%</span>
+              <input type="radio" name="mb-zoom-all" class="radio" checked aria-hidden="true" tabindex="-1" />
+            </label>
+            <label class="menu-item" style="justify-content: space-between" role="menuitemradio">
+              <span>125%</span>
+              <input type="radio" name="mb-zoom-all" class="radio" aria-hidden="true" tabindex="-1" />
+            </label>
+            <label class="menu-item" style="justify-content: space-between" role="menuitemradio">
+              <span>150%</span>
+              <input type="radio" name="mb-zoom-all" class="radio" aria-hidden="true" tabindex="-1" />
+            </label>
+          </menu>
+
+          <div class="menu-separator"></div>
+
+          <button class="menu-item" role="menuitem">
+            <i data-lucide="refresh-cw"></i>
+            <span>Reload</span>
+            <span class="shortcut">⌘R</span>
+          </button>
+          <button class="menu-item" role="menuitem">
+            <i data-lucide="maximize-2"></i>
+            <span>Toggle Fullscreen</span>
+            <span class="shortcut">F11</span>
+          </button>
+        </menu>
+      </div>
+
+      <!-- Profiles Menu -->
+      <div class="menubar-menu">
+        <button class="menubar-trigger" popovertarget="mb-profiles" style="anchor-name: --mb-profiles">Profiles</button>
+        <menu id="mb-profiles" popover class="dropdown menubar-content" data-placement="bottom-start" role="menu" style="position-anchor: --mb-profiles">
+          <div class="menu-label">Active Profile</div>
+          <label class="menu-item" style="justify-content: space-between" role="menuitemradio">
+            <span style="display: flex; align-items: center; gap: 0.5rem">
+              <i data-lucide="user"></i>
+              Personal
+            </span>
+            <input type="radio" name="mb-prof-all" class="radio" checked aria-hidden="true" tabindex="-1" />
+          </label>
+          <label class="menu-item" style="justify-content: space-between" role="menuitemradio">
+            <span style="display: flex; align-items: center; gap: 0.5rem">
+              <i data-lucide="briefcase"></i>
+              Work
+            </span>
+            <input type="radio" name="mb-prof-all" class="radio" aria-hidden="true" tabindex="-1" />
+          </label>
+
+          <div class="menu-separator"></div>
+
+          <button class="menu-item" role="menuitem">
+            <i data-lucide="settings"></i>
+            <span>Edit Profiles...</span>
+          </button>
+        </menu>
+      </div>
+
+      <!-- Disabled Trigger -->
+      <div class="menubar-menu">
+        <button class="menubar-trigger" disabled>Disabled</button>
+      </div>
+    </div>
+  </preview>
+</section>
