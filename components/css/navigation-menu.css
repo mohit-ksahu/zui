@@ -42,16 +42,16 @@
 
     @media (hover: hover) {
       &:hover {
-        background-color: var(--muted);
-        color: var(--foreground);
+        background-color: var(--accent);
+        color: var(--accent-foreground);
       }
     }
 
     &:focus-visible,
     &:active,
     &[data-state="open"] {
-      background-color: var(--muted);
-      color: var(--foreground);
+      background-color: var(--accent);
+      color: var(--accent-foreground);
     }
   }
 
@@ -87,16 +87,18 @@
     color: inherit;
     text-decoration: none;
     outline: none;
-    transition: background-color var(--duration-fast) var(--ease-default);
+    transition: background-color var(--duration-fast) var(--ease-default), color var(--duration-fast) var(--ease-default);
 
     @media (hover: hover) {
       &:hover {
-        background-color: var(--muted);
+        background-color: var(--accent);
+        color: var(--accent-foreground);
       }
     }
 
     &:focus-visible {
-      background-color: var(--muted);
+      background-color: var(--accent);
+      color: var(--accent-foreground);
     }
   }
 }

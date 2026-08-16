@@ -37,16 +37,16 @@
 
     @media (hover: hover) {
       &:hover {
-        background-color: var(--muted);
-        color: var(--foreground);
+        background-color: var(--accent);
+        color: var(--accent-foreground);
       }
     }
 
     &:focus-visible,
     &[data-state="open"],
     &:is(:active) {
-      background-color: var(--muted);
-      color: var(--foreground);
+      background-color: var(--accent);
+      color: var(--accent-foreground);
     }
 
     &:disabled {
